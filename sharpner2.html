@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+          background-image: url("pic1.jpg");
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-content: center;
+             
+          }
+           h1{
+              color: orange;
+              text-align: center;
+           }
+          #maindiv{
+              width: 500px;
+              border: 2px solid orange;
+              background-color: white;
+          }
+          label{
+              padding: 5px;
+          }
+          input{
+              margin: 5px;
+          }
+          .area{
+             width: 480px;
+  
+          }
+  
+      </style>
+</head>
+<body>
+    <div id="maindiv">
+        <h1>Book A Call</h1>
+        <form action="#" onsubmit="onsignup(event)">
+            <div>
+            <label for="username">Name</label> <br>
+            <input type="text" name="username" id="username" class="area">
+            </div><br>
+            <div>
+                <label for="email">Email Address</label><br>
+                <input type="email" name="email" id="email" class="area">    
+            </div><br>
+
+            <div>
+                <label for="phone">Phone Number</label><br>
+                <input type="number" name="phone" id="ph" class="area">
+            </div><br>
+            <div>
+                <label >Time for Call</label><br>
+                <input type="date" name="date" id="dt" placeholder="23-09-2023" >
+                <input type="time" name="time" id="tm" placeholder="20:24">
+            </div><br>
+
+            <div>
+                <button type="submit" class="area">Get a Call</button>
+            </div><br>
+        </form>
+    </div>
+    
+    <script>
+       
+        function onsignup(event){
+           event.preventDefault();
+           localStorage.setItem("username",event.target.username.value);
+           localStorage.setItem("userEmailId",event.target.email.value);
+           localStorage.setItem("phoneNumber",event.target.phone.value);
+           localStorage.setItem("date",event.target.date.value);
+           localStorage.setItem("time",event.target.time.value);
+    
+        }
+       
+        
+    </script>
+</body>
+</html>
