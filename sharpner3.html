@@ -71,15 +71,36 @@
     
     <script>
        
-        function onsignup(event){
-           event.preventDefault();
-           console.log(event.target.username.value);
-           console.log(event.target.email.value);
-           console.log(event.target.phone.value);
-           console.log(event.target.date.value);
-           console.log(event.target.time.value);
-    
-        }
+       function onsignup(event) {
+        event.preventDefault();
+
+        // Get form input values
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("ph").value;
+        const date = document.getElementById("dt").value;
+        const time = document.getElementById("tm").value;
+
+        // Create an object to hold the input values
+        const userDetails = {
+          username: username,
+          email: email,
+          phone: phone,
+          date: date,
+          time: time,
+        };
+
+        // Store the object in local storage
+        localStorage.setItem("userDetails", JSON.stringify(userDetails));
+
+        // Reset the form
+        document.getElementById("username").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("ph").value = "";
+        document.getElementById("dt").value = "";
+        document.getElementById("tm").value = "";
+      }
+    </script>
        
         
     </script>
